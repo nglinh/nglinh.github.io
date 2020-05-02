@@ -6,7 +6,14 @@ module.exports = {
   plugins: [
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-typescript",
+    "gatsby-plugin-graphql-codegen",
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,8 +24,12 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: ["gatsby-remark-copy-linked-files", "gatsby-remark-images", "gatsby-remark-prismjs"],
+        plugins: [
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-images",
+          "gatsby-remark-prismjs",
+        ],
       },
     },
   ],
-}
+};
