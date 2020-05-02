@@ -4,7 +4,7 @@ import { IndexQuery } from "../../graphql-types";
 
 // import '../css/index.css'; // add some style if you want!
 
-const Index = ({ data }: { data: IndexQuery }) => {
+export default function Index({ data }: { data: IndexQuery }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
@@ -23,7 +23,7 @@ const Index = ({ data }: { data: IndexQuery }) => {
         })}
     </div>
   );
-};
+}
 
 export const pageQuery = graphql`
   query Index {
@@ -42,5 +42,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default Index;
