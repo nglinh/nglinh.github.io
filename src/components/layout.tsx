@@ -1,5 +1,7 @@
 import * as React from "react";
 
+const styles = require("./layout.css");
+
 export const Layout: React.SFC<{ children: React.ReactNode }> = ({
   children,
 }) => {

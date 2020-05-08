@@ -2,8 +2,6 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { IndexQuery } from "../../graphql-types";
 
-// import '../css/index.css'; // add some style if you want!
-
 export default function Index({ data }: { data: IndexQuery }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
